@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Allowance Tracker (GH₵)</title>
+<link rel="stylesheet" href="real_finance.css">
+</head>
+<body>
+<main>
+<header class="top">
+  <div class="brand">
+    <div class="brandicon">₵</div>
+    <div><h1>Allowance Tracker</h1><div class="subtitle">A clearer view of your spending</div></div>
+  </div>
+  <button class="theme" id="theme" aria-label="Switch color theme" title="Switch color theme">☀️</button>
+</header>
+
+<div class="card">
+  <div class="g">
+    <div><label>Weekly allowance (GH₵)</label><input id="wk" type="number" min="0" step="0.01" inputmode="decimal"></div>
+    <div><label>Monthly allowance (GH₵)</label><input id="mo" type="number" min="0" step="0.01" inputmode="decimal"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="row">
+    <div class="seg"><button id="vw" class="on">Week</button><button id="vm">Month</button></div>
+    <div class="nav"><button id="pv" aria-label="Previous">‹</button><span id="lbl" class="mut"></span><button id="nx" aria-label="Next">›</button></div>
+  </div>
+  <div class="g stats">
+    <div class="stat"><div class="mut">Allowance</div><div class="big" id="sb">–</div></div>
+    <div class="stat"><div class="mut">Spent</div><div class="big" id="ss">–</div></div>
+    <div class="stat"><div class="mut">Left</div><div class="big" id="sl">–</div></div>
+  </div>
+  <div class="bar"><i id="pb" style="width:0"></i></div>
+  <div class="mut hint" id="hint"></div>
+</div>
+
+<div class="card">
+  <h2>Add expense</h2>
+  <div class="g">
+    <div><label>Amount (GH₵)</label><input id="am" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+    <div><label>Category</label><select id="ct"></select></div>
+    <div><label>Date</label><input id="dt" type="date"></div>
+    <div><label>Note (optional)</label><input id="nt" type="text" placeholder="e.g. waakye"></div>
+  </div>
+  <div style="margin-top:10px"><button class="btn p" id="add">Add expense</button></div>
+</div>
+
+<div class="card">
+  <h2>Where it went</h2>
+  <div class="donutwrap"><div class="donut" id="dn"></div><div class="leg" id="lg"></div></div>
+</div>
+
+<div class="card">
+  <h2>Spending by day</h2>
+  <div class="days" id="dy"></div>
+</div>
+
+<div class="card">
+  <div class="sectionhead"><h2>Expenses</h2><button class="btn" id="csv">↓ Export CSV</button></div>
+  <div id="ls"></div>
+  <div class="footer">Your spending data stays in this browser</div>
+</div>
+</main>
+<script src="real_finance.js"></script>
+</body>
+</html>
